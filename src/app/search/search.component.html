@@ -1,0 +1,10 @@
+<h1>Buscador</h1>
+<form action="">
+  <input type="text" #inputText name="searchText" [placeholder]="placeholderName">
+  <input type="button" (click)="search(inputText.value)" [value]="labelName">
+  <!-- <input type="text" #inputText name="searchText" [attr.placeholder]="placeholderName">
+  <button type="button" [innerHTML]="labelName">{{labelName}}</button> -->
+
+  <p>Parámetro a buscar {{searchText}}</p>
+  <p>{{resultado}}</p>
+</form>
