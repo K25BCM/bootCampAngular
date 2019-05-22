@@ -1,4 +1,5 @@
 import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
+import { OwnerServiceService } from './owner-service.service';
 
 @Component({
   selector: 'app-search',
@@ -12,13 +13,15 @@ export class SearchComponent implements OnInit {
   @Input () labelName : String;
   @Input () placeholderName : String;
   @Output() eventoNotif = new EventEmitter();
+  owners : any;
 
 
-  constructor() { }
+  constructor(private service : OwnerServiceService) { }
 
   ngOnInit() {
-
-    this.searchText = "";    
+    this.service.getOwners().subscribe(data => {this.owners = data;});
+    this.searchText = ""; 
+    console.log("Hola");   
   }
 
   search(query : String){
