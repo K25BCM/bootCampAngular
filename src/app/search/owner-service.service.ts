@@ -6,20 +6,12 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 
-export class OwnerServiceService implements  OnInit{
-
-  apiURL: string = 'http://10.125.124.75:9966/petclinic/api/owners';
+export class OwnerServiceService {
   
-
   constructor(private http: HttpClient) {
   }
 
-  ngOnInit() {
-
-
-  }
-
   getOwners() {
-   return this.http.get(this.apiURL);
+   return this.http.get('http://10.125.124.75:9966/petclinic/api/owners');
 }
 }

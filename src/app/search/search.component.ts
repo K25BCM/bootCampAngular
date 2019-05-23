@@ -13,15 +13,12 @@ export class SearchComponent implements OnInit {
   @Input () labelName : String;
   @Input () placeholderName : String;
   @Output() eventoNotif = new EventEmitter();
-  owners : any;
 
 
-  constructor(private service : OwnerServiceService) { }
+  constructor() { }
 
   ngOnInit() {
-    this.service.getOwners().subscribe(data => {this.owners = data;});
     this.searchText = ""; 
-    console.log("Hola");   
   }
 
   search(query : String){

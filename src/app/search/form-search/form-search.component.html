@@ -8,3 +8,8 @@
   <p>Parámetro a buscar {{searchText}}</p>
   <p>{{resultado}}</p>
 </form>
+<ul>
+  <li *ngFor="let owner of owners">
+    Owner: {{owner.firstName}} {{owner.lastName}} from {{owner.city}}
+  </li>
+</ul>
