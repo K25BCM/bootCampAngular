@@ -8,17 +8,26 @@ import { CommonModule } from '@angular/common';
 import { SearchComponent } from './search/search.component';
 import { TestService } from './test.service';
 import { SearchModule } from './search/search.module';
+import { OwnerComponent } from './owner/owner.component';
+import { FormOwnerComponent } from './form-owner/form-owner.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatFormFieldModule} from '@angular/material/form-field';
+
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    OwnerComponent,
+    FormOwnerComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     CommonModule,
     FormsModule,
-    SearchModule
+    SearchModule,
+    BrowserAnimationsModule,
+    MatFormFieldModule
   ],
   providers: [
     TestService

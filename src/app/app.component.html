@@ -18,14 +18,23 @@
   </li>
 </ul> -->
 
-<app-form-search labelName="Búsqueda" placeholderName="A buscar..." (eventoNotif)="alertMsg($event)">
+<nav>
+  <ul>
+    <li><a routerLink="" routerLinkActive="active">Home</a></li>
+    <li><a routerLink="search" routerLinkActive="active">Search</a></li>
+    <li><a routerLink="owner" routerLinkActive="active">Owner</a></li>
+    <li><a routerLink="owners-add" routerLinkActive="active">Add Owner</a></li>
+  </ul>
+</nav>
+
+<!-- <app-form-search labelName="Búsqueda" placeholderName="A buscar..." (eventoNotif)="alertMsg($event)">
 
 </app-form-search>
-<p>{{eventMsg}}</p>
-
+<p>{{eventMsg}}</p> -->
+<!-- <app-owner (eventoOwner)="showOwner($event)"></app-owner> -->
 <!-- <label for="prueba">Introduce texto:</label>
 <input type="text" name="name" id="prueba" [(ngModel)]="name">
 <p>{{name}}</p> -->
 
-<!-- <router-outlet></router-outlet> -->
+<router-outlet></router-outlet>
 

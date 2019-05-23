@@ -1,0 +1,32 @@
+<div>
+  <h1>Nuevo dueño: </h1>
+  <form #ownerForm="ngForm" (ngSubmit)="onSubmit(ownerForm.value)">
+    <div class="form-group">
+      <label for="ownerFirstName">Nombre:</label>
+      <input type="text" name="firstName" class="form-control" [(ngModel)]="owner.firstName" #ownerFirstName="ngModel"
+        required>
+        <div [hidden]="ownerFirstName.valid || ownerFirstName.pristine" class="alert alert-danger">
+          Error!
+        </div>
+    </div>
+    <div class="form-group">
+      <label for="ownerLastName">Apellidos:</label>
+      <input type="text" name="lastName" class="form-control" [(ngModel)]="owner.lastName" #ownerLastName="ngModel" required>
+    </div>
+    <div class="form-group">
+      <label for="ownerAddress">Dirección:</label>
+      <input type="text" name="address" class="form-control" [(ngModel)]="owner.address" #ownerAddress="ngModel" required>
+    </div>
+    <div class="form-group">
+      <label for="ownerCity">Ciudad:</label>
+      <input type="text" name="city" class="form-control" [(ngModel)]="owner.city" #ownerCity="ngModel" required>
+    </div>
+    <div class="form-group">
+      <label for="ownerTlf">Teléfono:</label>
+      <input type="text" name="telephone" class="form-control" [(ngModel)]="owner.telephone" #ownerTlf="ngModel" required>
+    </div>
+    <div>
+      <button type="submit" [disabled]="!ownerForm.valid">Add Owner</button>
+    </div>
+  </form>
+</div>

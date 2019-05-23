@@ -1,15 +1,25 @@
 <h1>Buscador</h1>
-<form action="">
-  <input type="text" #inputText name="searchText" [placeholder]="placeholderName">
-  <input type="button" (click)="search(inputText.value)" [value]="labelName">
-  <!-- <input type="text" #inputText name="searchText" [attr.placeholder]="placeholderName">
-  <button type="button" [innerHTML]="labelName">{{labelName}}</button> -->
+<div>
+  <form #searchForm="ngForm">
+    <input type="text" name="searchText" placeholder="A buscar..."  [(ngModel)]="searchText" #inputText>
+    <input type="button" (click)="searchByName(inputText.value)" value="Buscar">
+    <!-- <input type="text" #inputText name="searchText" [attr.placeholder]="placeholderName">
+    <button type="button" [innerHTML]="labelName">{{labelName}}</button> -->
+  </form>
+</div>
+<br>
+<div>
+    <input type="button" value="Buscar todos" (click)="searchAll()">
+</div>
 
-  <p>Parámetro a buscar {{searchText}}</p>
-  <p>{{resultado}}</p>
-</form>
-<ul>
-  <li *ngFor="let owner of owners">
+<!-- <ul>
+  <li *ngFor="let owner of owners" (click)="showDetails(owner)">
     Owner: {{owner.firstName}} {{owner.lastName}} from {{owner.city}}
+  </li>
+</ul> -->
+
+<ul>
+  <li *ngFor="let owner of owners" (click)="onSelect(owner)">
+    {{owner.firstName}}
   </li>
 </ul>

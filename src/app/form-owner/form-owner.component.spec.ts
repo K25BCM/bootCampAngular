@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { NewCmpComponent } from './new-cmp.component';
+import { FormOwnerComponent } from './form-owner.component';
 
-describe('NewCmpComponent', () => {
-  let component: NewCmpComponent;
-  let fixture: ComponentFixture<NewCmpComponent>;
+describe('FormOwnerComponent', () => {
+  let component: FormOwnerComponent;
+  let fixture: ComponentFixture<FormOwnerComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ NewCmpComponent ]
+      declarations: [ FormOwnerComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(NewCmpComponent);
+    fixture = TestBed.createComponent(FormOwnerComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
